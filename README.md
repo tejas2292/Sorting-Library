@@ -1,0 +1,2 @@
+# Sorting Library
+ Consider the problem of designing and implementing a sorting library. The library will have to: • Sort sequences of values (numbers and strings); • Return an array of sorted values for each input; • Be available with either an optional argument or a second version to return an auxiliary array that, for each element of the main output array, records the position of that element in the input sequence; • The size of the input sequence to be sorted is determined by the users.
