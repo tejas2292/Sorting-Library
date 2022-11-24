@@ -12,7 +12,7 @@ void QuickSort::swap(double* a, double* b)
 void QuickSort::quickSort(double array[], int low, int high)
 {
 	if (low < high) {
-		double partI = partition(array, low, high);
+		int partI = partition(array, low, high);
 		quickSort(array, low, partI - 1);
 		quickSort(array, partI + 1, high);
 	}
