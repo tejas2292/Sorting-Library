@@ -17,8 +17,8 @@ int main() {
 		}
 	}
 	// Create two arrays of 1E6 elements, only sizeInput elements will be filled.
-	double* array1 = new int[1000000];
-	double* array2 = new int[1000000];
+	double* array1 = new double[1000000];
+	double* array2 = new double[1000000];
 	srand(time(NULL));
 	for (int i = 0; i < sizeInput; i++) {
 		array1[i] = rand() % 10000001;
