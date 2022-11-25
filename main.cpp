@@ -1,6 +1,7 @@
 #include <random>
 #include "BubbleSort.h"
 #include "QuickSort.h"
+#include <chrono>
 
 using namespace std;
 
@@ -24,19 +25,25 @@ int main() {
 		array1[i] = rand() % 10000001;
 		array2[i] = rand() % 10000001;
 	}
+	auto start = chrono::high_resolution_clock::now();
 	// Bubble sort
 	BubbleSort* bubbles = new BubbleSort();
 
 	bubbles->sort(array1, sizeInput);
 
 	// Quicksort
-	cout << "Quicksorting array 2:\n";
+	//cout << "Quicksorting array 2:\n";
 	QuickSort* quicks = new QuickSort();
 	quicks->quickSort(array2, 0, sizeInput);
 
+	auto stop = chrono::high_resolution_clock::now();
+	chrono::microseconds time = chrono::duration_cast<chrono::microseconds>(stop - start);
+	cout << "Elapsed time: " << time.count() << " us";
+	/*
 	for (int i = 0; i < sizeInput; i++) {
 		cout << array2[i] << " ";
 	}
+	*/
 
 	// Delete both arrays
 	delete[] array1;
