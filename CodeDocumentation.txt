@@ -1,0 +1,159 @@
+Purpose of this file: Documentation of all files in the project.
+Each file and class will be structured this way:
+
+Class/File name
+---------------
+
+Purpose: purpose of the file
+Libraries: which libraries were used
+Variables: any parameters or variables declared in the .h file for a class for example, or any variable in a main.cpp file
+
+(If program file)
+Summary of the program:
+Numerical steps explaining what the program does and its behaviour
+
+Methods:
+List of functions and methods declared and defined in the class/file.
+E.g.:
+void nameOfFunction(int params)
+Short explanation of the function.
+
+
+main.cpp
+--------
+
+Purpose: main program
+Libraries: sorting libraries, i/o libraries, time libraries
+Variables:
+    int sizeInput: Size of the array to be input by the user
+    int ch1: Choice input by the user (menu asks user to choose a sorting method)
+    double arrayNumber, tempNumber: arrays used for sorting
+    string arrayString, tempString: same but with strings
+    One object for each sorting class included: used for the actual sorting of the arrays
+
+Summary of the program:
+1 - Ask the user which sorting method they wish to use
+2 - The user inputs a choice
+3 - The program sorts the array and outputs the result
+
+Functions/Methods:
+void printNumbersArray()
+Prints the values stored in arrayNumber and fills tempNumber with arrayNumber's values
+
+void sortedNumbersArray()
+Prints the sorted values of the array with their index
+
+void printStringArray()
+Same as printNumbersArray but with arrayString
+
+void sortedStringsArray()
+Same as sortedNumbersArray but with arrayString
+
+void getUserInput()
+Gets user input (0 < input <= 1,000,000) and sets the value of sizeInput to the user input
+
+void numbersArrayCreation() / void StringsArrayCreation()
+Fills arrayNumbers/arrayStrings with random numbers/strings of 5 characters
+
+
+BubbleSortNumber class
+----------------------
+
+Purpose: contains methods to sort an array of doubles using the bubblesort method
+Libraries: iostream
+Variables: none
+
+Methods:
+void swap(double* a, double* b)
+Swaps the values of two variables a and b.
+
+void sort(double array[], int size)
+Sorts an array from index 0 to index size (bubblesort way).
+Inputs:
+    array: array to be sorted
+    size: size of the array to sort
+
+
+QuickSortNumber class
+---------------------
+
+Purpose: contains methods to sort an array of doubles using the quicksort method
+Libraries: iostream
+Variables: none
+
+Methods:
+void swap(double* a, double* b)
+Same as BubblesortNumber.
+
+void sort(double array[], int size)
+Sorts an array from index 0 to index size (bubblesort way).
+Inputs:
+    array: array to be sorted
+    size: size of the array to sort
+
+
+BubbleSortString
+----------------
+
+Purpose: same as its number counterpart but for strings
+Libraries: iostream, String, cstdlib
+Variables: none
+
+Methods:
+void swap(string* a, string* b)
+Swaps two strings.
+
+void sort(string array[], int size)
+Sorts an array from index 0 to index size (bubblesort way).
+Inputs:
+    array: array to be sorted
+    size: size of the array to sort
+
+QuickSortString
+---------------
+
+Purpose: same as its number counterpart but for strings
+Libraries: iostream, String, cstdlib
+Variables: none
+
+Methods:
+void swap(string* a, string* b)
+Swaps two strings.
+
+void quicksort(string array[], int low, int high)
+Sorts an array using the quicksort method.
+Inputs:
+    array: array to be sorted
+    low, high: parameters used by the quicksort method. Determines how to fraction the array
+
+void partition(string array[], int low, int high)
+Invoked by quicksort, creates smaller arrays from array to sort them individually.
+This is the function that defines the quicksort method.
+
+
+BubbleSortNumberMPI, QuickSortNumberMPI, BubbleSortStringMPI, QuickSortStringMPI
+--------------------------------------------------------------------------------
+
+Purpose: same as the previous classes, but for parallel computing.
+Libraries: same as before
+Variables: none
+
+Methods: Same as before
+
+
+RandStringGenerator
+-------------------
+
+Purpose: generate random strings for the string sorting classes
+Libraries: String, iostream, cstdlib, random
+Variables: none
+
+Methods:
+string random_string(size_t length)
+Generates a random string of length characters. All possible characters are defined by the variable:
+const string characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+In short, every letter in the alphabet, upper and lowercase, and all digits.
+Inputs:
+    size_t length: number of characters in the generated string
+Outputs:
+    string of length characters
